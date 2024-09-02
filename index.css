@@ -1,1 +1,137 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+#container {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+
+.img-container,
+img {
+  display: block;
+  margin-top: 32px;
+  width: 50%;
+  min-width: 360px;
+}
+
+#output {
+  background-color: #1f3569;
+  padding: 15px;
+}
+
+.uploadOuter {
+  text-align: left;
+  padding: 20px;
+  margin-top: 64px;
+}
+
+.uploadOuter strong {
+  padding: 0 10px;
+}
+
+.dragBox {
+  width: 500px;
+  height: 200px;
+  margin: 32px auto;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  line-height: 200px;
+  color: #999;
+  border: 2px dashed #ccc;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s;
+}
+
+.dragBox input[type="file"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+.draging {
+  transform: scale(1.1);
+}
+
+#preview {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#preview img {
+  max-width: 100%;
+  margin: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1f3569;
+}
+
+#upload-btn {
+  text-align: center;
+  margin: 32px auto;
+  width: 200px;
+  height: 48px;
+  display: none;
+}
+
+#upload-btn[disabled] {
+  opacity: .6;
+  cursor: progress;
+}
+
+p#preview-text {
+  text-align: center;
+  font-size: 18px;
+}
+
+.form-group {
+  max-width: 400px;
+  margin-top: 32px;
+  margin: 32px auto;
+  margin-top: 32px;
+}
+
+#progress-container {
+  display: none;
+}
+
+.progress-bar {
+  background-color: #1f3569;
+}
+
+footer .disclaimer {
+  font-size: 12px;
+}
 

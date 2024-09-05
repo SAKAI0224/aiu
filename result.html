@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>リリース制限がある都道府県</title>
+    <style>
+        .fish-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .fish-card img {
+            max-width: 100%;
+            height: auto;
+        }
+        .fish-info {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>リリース制限がある魚</h1>
+    <div id="fish-container"></div>
+
+    <script>
+        // データセット (リリース制限の有無を含む)
+        const fishData = [
+        ];
+
+        // fish-container要素を取得
+        const fishContainer = document.getElementById("fish-container");
+
+        // リリース制限がある魚だけを表示する関数
+        function displayRestrictedFish() {
+            // リリース制限があるデータだけフィルタリング
+            const restrictedFish = fishData.filter(fish => fish.release_restriction);
+
+            restrictedFish.forEach(fish => {
+                // カードのHTMLを作成
+                const fishCard = document.createElement("div");
+                fishCard.classList.add("fish-card");
+
+                fishCard.innerHTML = `
+                    <img src="${fish.image}" alt="${fish.name}">
+                    <div class="fish-info">
+                        <p>魚の名前: ${fish.name}</p>
+                        <p>都道府県: ${fish.prefecture}</p>
+                        <p>リリース制限: あり</p>
+                    </div>
+                `;
+
+                // fishContainerにカードを追加
+                fishContainer.appendChild(fishCard);
+            });
+        }
+
+        // ページ読み込み時に実行
+        window.onload = displayRestrictedFish;
+    </script>
+</body>
+</html>

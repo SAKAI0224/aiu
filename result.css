@@ -1,0 +1,42 @@
+@charset"UTF-8";
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  text-align: center;
+  width: auto;
+  max-width: 600px;
+  margin: 0 auto; /* 中央揃えを強制 */
+  word-wrap: break-word; /* 長い単語を折り返す */
+  font-size: 40px;
+  color:white;
+  text-shadow: 
+    1px 1px 0px black, /* 左下の影 */
+    -1px -1px 0px black, /* 右上の影 */
+    1px -1px 0px black, /* 左上の影 */
+    -1px 1px 0px black; /* 右下の影 */
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5em;
+    max-width: 90%; /* 画面幅の90%に設定 */
+    margin: 0 auto; /* 中央揃えを維持 */
+    font-size: 50px; /* スマホなど画面が狭い場合のフォントサイズ */
+  }
+}
+
+@media (min-width: 601px) {
+  h1 {
+    font-size: 2em;
+    max-width: 600px; /* 最大幅を600pxに設定 */
+    margin: 0 auto; /* 中央揃えを維持 */
+    font-size: 60px; /* タブレットや中くらいの画面サイズの場合のフォントサイズ */
+  }
+}

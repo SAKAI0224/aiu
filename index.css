@@ -1,137 +1,98 @@
+@charset "UTF-8";
+
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin: 0;
+  background: linear-gradient(135deg, #b3e0ff, #dfefff); /* グラデーション背景 */
 }
 
-#container {
-  display: block;
-  margin: auto;
-  width: 100%;
-}
-
-.img-container,
-img {
-  display: block;
-  margin-top: 32px;
-  width: 50%;
-  min-width: 360px;
-}
-
-#output {
-  background-color: #1f3569;
-  padding: 15px;
-}
-
-.uploadOuter {
-  text-align: left;
-  padding: 20px;
-  margin-top: 64px;
-}
-
-.uploadOuter strong {
-  padding: 0 10px;
-}
-
-.dragBox {
-  width: 500px;
-  height: 200px;
-  margin: 32px auto;
-  position: relative;
+h1 {
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
   text-align: center;
-  font-weight: bold;
-  line-height: 200px;
-  color: #999;
-  border: 2px dashed #ccc;
+  width: auto;
+  max-width: 600px;
+  margin: 20px auto; /* 上下に20pxのマージンを追加 */
+  word-wrap: break-word;
+  font-size: 40px;
+  color: white;
+  text-shadow: 
+    1px 1px 0px black,
+    -1px -1px 0px black,
+    1px -1px 0px black,
+    -1px 1px 0px black;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 30px; /* スマホなど画面が狭い場合のフォントサイズ */
+    max-width: 90%; /* 画面幅の90%に設定 */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  h1 {
+    font-size: 40px; /* タブレットや中くらいの画面サイズの場合のフォントサイズ */
+  }
+}
+
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 60px; /* デスクトップなど画面が広い場合のフォントサイズ */
+  }
+}
+
+/* フォーム全体のスタイル */
+#upload-form {
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s;
+  align-items: center;
+  gap: 20px; /* ボタンとの間に十分なスペースを確保 */
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  width: 300px;
+  margin: 20px auto; /* 上下に20pxのマージンを追加 */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.dragBox input[type="file"] {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  top: 0;
-  left: 0;
-}
-
-.draging {
-  transform: scale(1.1);
-}
-
-#preview {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#preview img {
-  max-width: 100%;
-  margin: 10px;
-}
-
-.btn {
+/* ファイル選択ボタンのスタイル */
+.custom-file-upload {
   display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b); /* ピンクからオレンジのグラデーション */
+  color: white;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: 1px solid #ff7e5f; /* グラデーションに合わせた境界線 */
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1f3569;
+.custom-file-upload:hover {
+  background: linear-gradient(to right, #feb47b, #ff7e5f); /* ホバー時のグラデーション反転 */
+  color: white;
+  transform: scale(1.05); /* ホバー時に少し拡大 */
 }
 
-#upload-btn {
-  text-align: center;
-  margin: 32px auto;
-  width: 200px;
-  height: 48px;
+/* 実際のファイル入力を隠す */
+#file-upload {
   display: none;
 }
 
-#upload-btn[disabled] {
-  opacity: .6;
-  cursor: progress;
+/* アップロードボタンのスタイル */
+.custom-submit-button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #00c6ff, #0072ff); /* 青色のグラデーション */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-p#preview-text {
-  text-align: center;
-  font-size: 18px;
+.custom-submit-button:hover {
+  background: linear-gradient(to right, #0072ff, #00c6ff); /* ホバー時のグラデーション反転 */
+  transform: scale(1.05); /* ホバー時に少し拡大 */
 }
-
-.form-group {
-  max-width: 400px;
-  margin-top: 32px;
-  margin: 32px auto;
-  margin-top: 32px;
-}
-
-#progress-container {
-  display: none;
-}
-
-.progress-bar {
-  background-color: #1f3569;
-}
-
-footer .disclaimer {
-  font-size: 12px;
-}
-

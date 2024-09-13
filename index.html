@@ -2,21 +2,19 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="index.css">
-    <title>YOLOv8物体検出</title>
-
-    <style>
-        body { font-family: Arial, sans-serif; }
-        #result { margin-top: 20px; }
-        img { max-width: 100%; height: auto; }
-    </style>
+    <title>これはリリース？？</title>
+    <link rel="stylesheet" href="index.css"> <!-- 外部CSSファイルを読み込む -->
 </head>
 <body>
     <h1>これはリリース？？</h1>
     <form id="upload-form" enctype="multipart/form-data">
-        <input type="file" name="image" accept="image/*" required>
-        <button type="submit">アップロード</button>
+        <label class="custom-file-upload">
+            <input type="file" id="file-upload" name="image" accept="image/*" required>
+            ファイルを選択
+        </label>
+        <button type="submit" class="custom-submit-button">アップロード</button>
     </form>
+
     <div id="result"></div>
 
     <script>

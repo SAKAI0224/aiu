@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 body {
-  background-image:url(sakana.png);
+  background-color: white;
   background-position: center center;
   /* 画像をタイル状に繰り返し表示しない */
   background-repeat: no-repeat;
